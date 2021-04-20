@@ -1,5 +1,5 @@
 include:
-  - project: 'gitops/infra/templates'
+  - project: 'cloudnua-public/gitops/infra/templates'
     file: '/terraform.gitlab-ci.yml'
 
 # Using protected pipeline variable for initial deployment
