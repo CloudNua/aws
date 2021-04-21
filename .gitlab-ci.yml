@@ -3,8 +3,12 @@ include:
     file: '/terraform.gitlab-ci.yml'
 
 # Using protected pipeline variable for initial deployment
+variables:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+  AWS_REGION: $AWS_REGION
+  GITLAB_TOKEN: $GITLAB_TOKEN
+
+# Using protected pipeline variable for initial deployment
 before_script:
-  - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-  - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-  - export AWS_REGION=$AWS_REGION
-  - export GITLAB_TOKEN=$GITLAB_TOKEN
+  - echo "Initialise AWS EKS Stack...START!"

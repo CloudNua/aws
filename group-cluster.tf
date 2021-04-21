@@ -1,5 +1,5 @@
 data "gitlab_group" "gitops-apps" {
-  full_path = "gitops/apps"
+  full_path = "cloudnua-public/gitops/apps"
 }
 
 data "gitlab_projects" "cluster-management-search" {
@@ -12,7 +12,7 @@ data "gitlab_projects" "cluster-management-search" {
 }
 
 resource "gitlab_group_cluster" "aws_cluster" {
-  group                 = data.gitlab_group.gitops-demo-apps.id
+  group                 = data.gitlab_group.gitops-apps.id
   name                  = module.eks.cluster_id
   domain                = "eks.gitops-streamlit.com"
   environment_scope     = "eks/*"

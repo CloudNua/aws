@@ -1,4 +1,3 @@
-// Configure AWS VPC, Subnets, and Routes
 data "aws_availability_zones" "available" {
   state = "available"
 }
@@ -17,8 +16,8 @@ module "vpc" {
   propagate_public_route_tables_vgw = true
 
   tags = {
-    Terraform                               = "true"
-    Environment                             = "dev"
+    Terraform                                    = "true"
+    Environment                                  = "dev"
     "kubernetes.io/cluster/gitops-streamlit-eks" = "shared"
   }
   public_subnet_tags = {
