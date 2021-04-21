@@ -14,7 +14,8 @@ module "eks" {
   worker_groups = [
     {
       instance_type    = "t2.xlarge"
-      asg_max_size     = 2
+      asg_min_size     = 2
+      asg_max_size     = 3
       root_volume_type = "gp2" # Bug in default "gp3" https://github.com/terraform-aws-modules/terraform-aws-eks/issues/1205
       tags = [{
         key                 = "Terraform"
