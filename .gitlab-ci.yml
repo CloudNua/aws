@@ -12,3 +12,5 @@ variables:
 # Using protected pipeline variable for initial deployment
 before_script:
   - echo "Initialise AWS EKS Stack...START!"
+after_script:
+  - echo ""Initialise AWS EKS Stack...DONE!""
