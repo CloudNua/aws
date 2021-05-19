@@ -18,7 +18,7 @@ data "gitlab_project" "gitops-demo-apps" {
 resource "gitlab_project_cluster" "aws_cluster" {
   project               = data.gitlab_project.gitops-demo-apps.id
   name                  = module.eks.cluster_id
-  domain                = "gitops-demo.cloudnua.com"
+  domain                = "eks-gitops.cloudnua.com"
   environment_scope     = "eks/*"
   kubernetes_api_url    = module.eks.cluster_endpoint
   kubernetes_token      = data.kubernetes_secret.gitlab-admin-token.data.token
